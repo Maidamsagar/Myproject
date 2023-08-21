@@ -1,0 +1,19 @@
+package com.qa.testscripts;
+
+import org.testng.annotations.Test;
+
+public class TC_AmazonAssinment_002 extends TestBase{
+	@Test
+	public void AmazonPixel() {
+		boolean contains=driver.getTitle().contains("Amazon");
+		if(contains) {
+			System.out.println("user is landed on the home page");
+		}else
+		{
+			System.out.println("user is not landedon home page");
+		}
+		
+		
+	}
+
+}

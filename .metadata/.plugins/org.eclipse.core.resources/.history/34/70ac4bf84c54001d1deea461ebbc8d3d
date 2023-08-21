@@ -1,0 +1,18 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.WebDriver;
+
+public class TC_Goibibo_002 extends TestBase{
+	
+	public void detailsRounTrip() {
+		boolean contains=driver.getTitle().contains("Goibibo");
+		if(contains) {
+			System.out.println("user is landed on the Goibibo page");
+		}else
+		{
+			System.out.println("user is not landedon Goibibo page");
+		}
+		
+	}
+
+}

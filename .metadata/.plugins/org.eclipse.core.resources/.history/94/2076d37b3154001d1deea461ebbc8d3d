@@ -1,0 +1,23 @@
+package com.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class GoibiboPages {
+	WebDriver driver;
+//	@FindBy(xpath="//span[contains(text(),'One-way')]")
+//	WebElement Radio;
+//	public WebElement getRadio() {
+//		return Radio;
+//	}
+	
+
+	public GoibiboPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+		// TODO Auto-generated constructor stub
+	}
+
+}

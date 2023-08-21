@@ -1,0 +1,69 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
+
+public class TC_FlightBooking_004 extends TestBase {
+	@Test
+	public void searchByName() throws InterruptedException {
+		boolean contains=driver.getTitle().contains("Goibibo");
+		if(contains) {
+			System.out.println("user is landed on the Goibibo page");
+		}else
+		{
+			System.out.println("user is not landedon Goibibo page");
+		}
+		Thread.sleep(5000);
+		OrGoibibo.getFlights().click();
+		boolean contains1=driver.getTitle().contains("Goibibo");
+		if(contains1) {
+			System.out.println("user is landed on the Goibibo Flights page");
+		}else
+		{
+			System.out.println("user is not landedon Goibibo Flights page");
+		}
+		Thread.sleep(5000);
+		OrGoibibo.getoneRadio().click();
+		Thread.sleep(5000);
+		System.out.println("one way clicked");
+		
+//		OrGoibibo.getFrom().click();
+//		Thread.sleep(5000);
+//		OrGoibibo.getFromField().sendKeys("HYDERABAD");
+//		Thread.sleep(5000);
+//		OrGoibibo.getFromField().sendKeys(Keys.ENTER);
+//		Thread.sleep(2000);
+//		System.out.println("Selected from by name :");
+//		OrGoibibo.getTo().sendKeys("DELHI");
+//		Thread.sleep(5000);
+//		OrGoibibo.getTo().sendKeys(Keys.ENTER);
+//		Thread.sleep(5000);
+//		System.out.println("Selected To by name :");
+//		OrGoibibo.getdoneDate().click();
+//		Thread.sleep(3000);
+//		OrGoibibo.getadultDone().click();
+//		Thread.sleep(2000);
+		
+		
+		
+		
+		
+//		driver.findElement(By.xpath("//span[text()='From']")).click();
+//		driver.findElement(By.xpath("//input")).sendKeys("HYDERABAD");
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//input")).sendKeys(Keys.ENTER);
+//		Thread.sleep(2000);
+//		System.out.println("Selected from by name :");
+//		driver.findElement(By.xpath("//*[@id=\"root\"]/div[4]/div/div/div[1]/div[2]/div/div[2]/div/input")).sendKeys("DELHI");
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//*[@id=\"root\"]/div[4]/div/div/div[1]/div[2]/div/div[2]/div/input")).sendKeys(Keys.ENTER);
+//		Thread.sleep(5000);
+//		System.out.println("Selected To by name :");
+//		driver.findElement(By.xpath("//span[text()='Done']")).click();
+//	    Thread.sleep(3000);
+//		driver.findElement(By.xpath("//a[contains(text(),'Done')]")).click();
+//		Thread.sleep(2000);
+	}
+
+}

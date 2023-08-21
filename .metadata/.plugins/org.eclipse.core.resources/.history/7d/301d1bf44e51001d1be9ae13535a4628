@@ -1,0 +1,18 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class TC_WebDemo_001 {
+
+	public static void main(String[] args) {
+		// configure driver 
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\MAIDAMSAGAR\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        ChromeDriver driver=new ChromeDriver();
+        //for edge
+        System.setProperty("webdriver.edge.driver","//C:\\Users\\MAIDAMSAGAR\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+        EdgeDriver edriver=new EdgeDriver();
+	}
+
+}
+//C:\Users\MAIDAMSAGAR\Downloads\edgedriver_win64\msedgedriver.exe

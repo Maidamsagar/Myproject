@@ -1,0 +1,34 @@
+package com.qa.testscripts;
+
+import static org.testng.Assert.assertTrue;
+
+import java.util.Set;
+
+
+
+import junit.framework.Assert;
+
+public class TC_Linkedin_001 extends TestBaseGoogle{
+	
+	public void WorkingWithWindows() {
+	boolean contains=	driver.getCurrentUrl().contains("https://in.linkedin.com/https://in.linkedin.com/");
+		if(contains)
+		{
+			System.out.println("The user is landed on homePage");
+			Assert.assertTrue(contains);
+			
+		}else {
+			System.out.println("not landed on home page");
+			Assert.assertTrue(contains);
+		}
+		
+		LinkedinOR.getLinkedinUserAgreeLink().click();
+		LinkedinOR.getLinkedinPolcyLink().click();
+		LinkedinOR.getLinkedinCookPolcyLink().click();
+		
+		Set<String>AllWindows=driver.getWindowHandles();
+		Iterator<String>Ite=AllWindows.iterator();
+	}
+	
+
+}

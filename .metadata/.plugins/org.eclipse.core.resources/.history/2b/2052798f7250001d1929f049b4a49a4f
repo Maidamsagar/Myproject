@@ -1,0 +1,20 @@
+package com.qa.testscripts;
+
+public class TC_NewToursAss_003 extends TestBase{
+	
+	public void UserWidthHeigt() {
+		int f1=newtour.getSearchUserName().getSize().getHeight();
+		int f2=newtour.getSearchUserName().getSize().getWidth();
+		
+		int f3=newtour.getSearchPassward().getSize().getHeight();
+		int f4=newtour.getSearchPassward().getSize().getWidth();
+		
+		if(f1==f3&&f2==f4) {
+			System.out.println("both are same");
+		}else
+		{
+			System.out.println("both are not same");
+		}
+	}
+
+}

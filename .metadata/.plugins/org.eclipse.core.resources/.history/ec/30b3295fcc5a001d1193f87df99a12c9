@@ -1,0 +1,154 @@
+package com.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class GoibiboPages {
+	WebDriver driver;
+	
+
+	@FindBy(linkText="Flights")
+	WebElement Flights;
+	public WebElement getFlights() {
+		return Flights;
+	}
+	@FindBy(xpath="//span[contains(text(),'One-way')]")
+	WebElement oneRadio;
+	public WebElement getoneRadio() {
+		return oneRadio;
+	}
+	@FindBy(xpath="//span[contains(text(),'Round-trip')]")
+	//@FindBy(id="Round-trip")
+	WebElement roundradio;
+	public WebElement getroundradio() {
+		return roundradio;
+	}
+	
+	//@FindBy(name="sc-dJjYzT eyHaJv fswWidgetLabel")
+	@FindBy(xpath="//span[text()='From']")
+	WebElement From;
+	public WebElement getFrom() {
+		return From;
+	}
+	
+	
+	@FindBy(xpath="//input")
+	WebElement FromField;
+	public WebElement getFromField() {
+		return FromField;
+	}
+	
+	@FindBy(xpath="//input")
+	WebElement To;
+	public WebElement getTo() {
+		return To;
+	}
+	
+	@FindAll(@FindBy(xpath="*//div[@class=\"DayPicker-Day\"]"))
+	List <WebElement> selectDate;
+	public List<WebElement> getselectDate() {
+		return selectDate;
+	}
+	
+	
+	
+	
+	
+	@FindBy(xpath="//span[text()='Done']")
+	WebElement doneDate;
+	public WebElement getdoneDate() {
+		return doneDate;
+	}
+	               
+	@FindBy(css="body.desktop:nth-child(2) div.sc-1gt8xf5-0.cEQQxj div.sc-1gt8xf5-3.cBVNVf div.sc-bYoBSM.fqpLgz div.sc-fFeiMQ.emsbJF div.sc-hiCibw.csHDph:nth-child(5) div.sc-dvQaRk.jBHqZz div.sc-bTfYFJ.rYVRK div.sc-kHOZwM.ikflyV div.sc-jUosCB.gIycCp div.sc-lcepkR.dFRxpk:nth-child(1) div.sc-faUpoM.sZvNY span.sc-Galmp.dZbQsT:nth-child(3) svg:nth-child(1) > path:nth-child(1)")
+	WebElement increAdult;
+	public WebElement getincreAdult() {
+		return increAdult;
+	}
+	
+	@FindBy(css="body.desktop:nth-child(2) div.sc-1gt8xf5-0.cEQQxj div.sc-1gt8xf5-3.cBVNVf div.sc-bYoBSM.fqpLgz div.sc-fFeiMQ.emsbJF div.sc-hiCibw.csHDph:nth-child(5) div.sc-dvQaRk.jBHqZz div.sc-bTfYFJ.rYVRK div.sc-kHOZwM.ikflyV div.sc-jUosCB.gIycCp div.sc-lcepkR.dFRxpk:nth-child(2) div.sc-faUpoM.sZvNY span.sc-Galmp.dZbQsT:nth-child(3) svg:nth-child(1) > path:nth-child(1)")
+	WebElement increChild;
+	public WebElement getincreChild() {
+		return increChild;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Done')]")
+	WebElement adultDone;
+	public WebElement getadultDone() {
+		return adultDone;
+	}
+	
+	@FindBy(xpath="//span[@class='sc-gKclnd hrZfTH']")
+	WebElement regular;
+	public WebElement getregular() {
+		return regular;
+	}
+	@FindBy(xpath="//span[@class='sc-gKclnd cczwjK']")
+	WebElement armed;
+	public WebElement getarmed() {
+		return armed;
+	}
+	@FindBy(xpath="//span[@class='sc-dtDOqo iuIbnZ']")
+	WebElement serachFlight;
+	public WebElement getserachFlight() {
+		return serachFlight;
+	}
+	
+	
+	
+	@FindAll(@FindBy(xpath="//*[@class='sc-efQSVx bUzoZw']"))
+	List<WebElement> AllSuggestions;
+	public List<WebElement>  getAllSuggestions() {
+		return AllSuggestions;
+	}
+	
+	
+	@FindAll(@FindBy(className="DayPicker-Month"))
+	List<WebElement> datePicker;
+	public List<WebElement>  getdatePicker() {
+		return datePicker;
+	}
+	
+	
+	
+	
+
+	public GoibiboPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+//*[@id=\"root\"]/div[4]/div/div/div[1]/div[2]/div/div[2]/div/input
+//li[@class='sc-iAKWXU lesjfG']
+	//ul[@id='autoSuggest-list']
+//    /html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]
+//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="/html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]")
+//	WebElement From;
+//	public WebElement getFrom() {
+//		return From;
+//	}
+//*[@id=\"root\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="//*[@id=\\\"root\\\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input")
+//	WebElement FromField;
+//	public WebElement getFromField() {
+//		return FromField;
+//	}

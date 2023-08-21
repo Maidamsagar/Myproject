@@ -1,0 +1,27 @@
+package com.qa.testscripts;
+
+import org.testng.annotations.Test;
+
+public class TC_AmazonAssinment_001 extends TestBaseGoogle{
+	@Test
+	public void AmazonAccCheck() {
+		boolean contains=driver.getCurrentUrl().contains("https://www.amazon.in/");
+		if(contains) {
+			System.out.println("user is landed on the home page");
+		}else
+		{
+			System.out.println("user is not landedon home page");
+		}
+		
+		OrAmazon.getSinIn().click();
+		
+     boolean contains1= driver.getTitle().contains("Amazon");
+		
+		if(contains1) {
+			System.out.println("the user is landed on the amazonRegistration page");
+		}else {
+			System.out.println("the user is not landed on the amazon");
+		}
+	}
+
+}

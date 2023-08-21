@@ -1,0 +1,44 @@
+package com.qa.testscripts;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.qa.pages.AmazonPages;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Tc_AmazonP_002 {
+	public static void main(String[] args) throws InterruptedException {
+	
+	//public void searchItem() {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+	    AmazonPages AmazonP=new AmazonPages(driver);
+		
+	    driver.get("http://www.amazon.in");
+	    AmazonP.getCategoryListBox().selectByVisibleText("Books");
+	    AmazonP.getSearchTextField().sendKeys("Da vinci code");
+	    AmazonP.getMagnifierBut().click();
+	    
+	    boolean contains2 = driver.getTitle().contains("Da vinci code");
+		if(contains2) {
+			System.out.println("Item is searched");
+		}else {
+			System.out.println("item is not serched");
+		}
+		List<WebElement>allItems=AmazonP.getAllItems();
+       System.out.println("Total no. of items loaded on the page are:"+ allItems.size());
+		
+		for(WebElement item:allItems) {
+			System.out.println(item.getText());
+		}
+		Thread.sleep(3000);
+		//driver.close();
+	}
+
+}
+//}

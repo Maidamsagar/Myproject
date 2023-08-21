@@ -1,0 +1,7 @@
+package com.qa.testscripts;
+
+public class TC_AmazonAssinment_001 extends TestBaseGoogle{
+	
+	
+
+}

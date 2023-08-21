@@ -1,0 +1,25 @@
+package com.qa.testscripts;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class TC_MakeMyTripAss_001 extends TestBase {
+	@Test
+	public void TopView() throws InterruptedException {
+	    List<WebElement> AllList = trip.getTopList();
+		System.out.println("Total item present are:"+ AllList.size());
+		Thread.sleep(3000);
+		
+		
+		for(WebElement e:AllList) 
+		{			
+			System.out.println(e.getText());
+		}
+	}
+	
+	
+
+}

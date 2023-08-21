@@ -1,0 +1,25 @@
+package com.qa.testscripts;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class TC_MakeMyTripAss_001 extends TestBase {
+	@Test
+	public void TopView() {
+	    List<WebElement> AllSuggestions = driver.getTopList();
+		System.out.println("Total suggentions are:"+ AllSuggestions.size());
+		
+		
+		
+		for(WebElement e:AllSuggestions) 
+		{			
+			System.out.println(e.getText());
+		}
+	}
+	
+	
+
+}

@@ -1,0 +1,13 @@
+package LPIAT25Team9.Goibibo.selenium.LPIAT25Team9.Goibibo.selenium;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}

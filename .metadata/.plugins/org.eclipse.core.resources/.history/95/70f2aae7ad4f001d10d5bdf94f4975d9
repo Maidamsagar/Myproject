@@ -1,0 +1,33 @@
+package com.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class AmazonAssinPages {
+	WebDriver driver;
+	
+	
+	@FindBy(linkText="Start here.")
+	WebElement SinIn;
+	
+	public WebElement getSinIn() {
+		return SinIn;
+	}
+	@FindBy(xpath="//input[@id='ap_customer_name']")
+	WebElement UserField;
+	public WebElement getUserField() {
+		return UserField;
+	}
+
+	public AmazonAssinPages(WebDriver rDriver) {
+		// TODO Auto-generated constructor stub
+		
+		
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver, this);
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.qa.pages;
+
+public class GoibiboPages {
+
+	public GoibiboPages() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

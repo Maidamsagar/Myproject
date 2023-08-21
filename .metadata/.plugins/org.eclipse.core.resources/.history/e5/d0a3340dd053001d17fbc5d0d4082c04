@@ -1,0 +1,14 @@
+package com.qa.testscripts;
+
+import com.beust.jcommander.Parameters;
+import com.qa.pages.TC_JustdialPages;
+
+public class TestBase {
+	TC_JustdialPages OrJustdial;
+	
+	@Parameters({"Browser","Url"})
+	public void setup(String Browser,String Url) {
+		
+	}
+
+}

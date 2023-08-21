@@ -1,0 +1,31 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class TC_Goibibo_001 extends TestBase{
+	@Test
+	public void Flights() {
+		
+		boolean contains=driver.getTitle().contains("Goibibo");
+		if(contains) {
+			System.out.println("user is landed on the Goibibo page");
+		}else
+		{
+			System.out.println("user is not landedon Goibibo page");
+		}
+		
+		WebElement radio =driver.findElement(By.xpath("//span[contains(text(),'One-way')]"));
+		boolean selectState =radio.isSelected();
+		if(selectState)
+		{
+			System.out.println("Round trip radio button is selected by default");
+		}else {
+			System.out.println("Round trip radio button is not selected by default");
+		}
+		
+		
+	}
+
+}

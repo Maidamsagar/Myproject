@@ -1,0 +1,40 @@
+import java.util.*;
+class demo
+{
+	 int age=30;
+	 String  name="leo";
+//	demo(int a, String b)
+//	{
+//		age=a;
+//		name="gulf";
+//	}
+	
+//	demo()
+//	{
+//	  age=45;
+//	  name="rolando";
+//	}
+	void result()
+	{
+		System.out.println("hai "+name);
+		System.out.println("your age is "+age);
+	}
+}
+public class Sample8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		demo d1=new demo();
+		d1.result();
+//		demo d2= new demo();
+//		demo() c1=new demo(31,"sam");
+//		c1.result();
+		
+		
+		
+		  
+		
+
+	}
+
+}

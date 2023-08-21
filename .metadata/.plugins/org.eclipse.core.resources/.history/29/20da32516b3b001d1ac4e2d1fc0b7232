@@ -1,0 +1,23 @@
+import java.util.*;
+class web
+{
+	
+	int demo(int a,int b)
+	{
+		int sum =a+b;
+		return sum;
+		
+	}
+}
+public class Sample9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		web b=new web();
+		b.demo(2, 5);
+		char[] sum = null;
+		System.out.println(sum);
+
+	}
+
+}

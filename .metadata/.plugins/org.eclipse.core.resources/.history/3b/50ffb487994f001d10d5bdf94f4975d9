@@ -1,0 +1,9 @@
+package com.qa.pages;
+
+public class DestinationPages {
+
+	public DestinationPages() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,97 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TC_Demo_001 {
+
+	//public static void main(String[] args) {
+		/*	String Browser="Chrome";
+		WebDriver driver3=null;
+		// TODO Auto-generated method stub
+	//	System.setProperty("webdriver.chrome.driver","C:\\Users\\MAIDAMSAGAR\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    //    //for edge
+    //    System.setProperty("webdriver.edge.driver","C:\\Users\\MAIDAMSAGAR\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+    //    EdgeDriver edriver=new EdgeDriver();
+        //Method 2
+     //   WebDriverManager.chromedriver().setup();
+     //   ChromeDriver driver1=new ChromeDriver();
+    //    WebDriverManager.edgedriver().setup();
+    //    EdgeDriver edriver1=new EdgeDriver();
+
+
+
+
+		if(Browser.equalsIgnoreCase("Chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver3=new ChromeDriver();
+		}else {
+			WebDriverManager.edgedriver().setup();
+			driver3=new EdgeDriver();
+		}
+
+        driver3.get("http://www.google.com");
+
+        System.out.println("Title  "+driver3.getTitle());
+        System.out.println("url   "+driver3.getCurrentUrl());
+
+        String src=driver3.getTitle();
+
+        if(src.contains("Google")){
+        	System.out.println("landed on google page");
+
+        }else {
+        	System.out.println("user is not landed on google page");
+        }
+     //   driver.close();
+   //     driver1.close();
+   //     edriver.close();
+        driver3.close();
+    //    edriver1.close();
+
+		 */
+		
+		public static void main(String[] args) {
+		    String Browser="Chrome";
+		    WebDriver driver =null;
+		    
+		    if(Browser.equalsIgnoreCase("Chrome")) {
+		    	System.out.println(" Chrome browser Invoked");
+		    	WebDriverManager.chromedriver().setup();
+		    	driver=new ChromeDriver();
+		    	
+		    }else {
+		    	System.out.println("Edge browser Invoked");
+		    	WebDriverManager.edgedriver().setup();
+		        driver=new EdgeDriver();
+		        
+		    }
+		    driver.get("http://www.google.com");
+		    String src=driver.getTitle();
+		    if(Browser.contains(src)) {
+		    	System.out.println("user is landed on  google");
+		    	
+		    }else {
+		    	System.out.println("user is not landed on google");
+		    }
+		    
+		    driver.get("http://www.amazon.in/");
+		    WebElement el=driver.findElement(By.id("searchDropdownBox"));
+		    Select s=new Select(el);
+		    s.selectByVisibleText("Books");
+		    WebElement search=driver.findElement(By.id("twotabsearchtextbox"));
+		    search.sendKeys("Da vinci code");
+		    //driver.close(); 
+		
+		
+		
+
+	}
+
+}

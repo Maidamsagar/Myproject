@@ -1,0 +1,88 @@
+package com.qa.testscripts;
+import org.testng.annotations.Parameters;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+
+import com.qa.pages.AmazonAssinPages;
+import com.qa.pages.DestinationPages;
+import com.qa.pages.FooterlinksPages;
+import com.qa.pages.GooglePages_001;
+import com.qa.pages.LinkedinPages;
+import com.qa.pages.MakeMyTripPages;
+import com.qa.pages.NewToursPages_001;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestBase {
+	
+		WebDriver driver;
+		FooterlinksPages FooterlinkOR;
+		
+		MakeMyTripPages trip;
+		GooglePages_001 Google;
+		LinkedinPages LinkedinOR;
+		DestinationPages DestinOR;
+		AmazonAssinPages OrAmazon;
+		JavascriptExecutor JS;
+		TakesScreenshot Ts;
+		NewToursPages_001 newtour;
+	    FileInputStream fileLoc;
+	    Properties prop;
+	    
+
+	    
+	    @BeforeClass
+	   @Parameters({"Browser","Url"})
+	   
+	    public void setup(String Browser,String Url) throws IOException 
+	    {
+	        fileLoc= new FileInputStream("C:\\Users\\MAIDAMSAGAR\\eclipse-workspace\\AutomationTest.Selenium\\src\\test\\java\\com\\qa\\testdata\\credentials.properties");
+	        prop= new Properties();
+	        prop.load(fileLoc);
+	        
+	        if(Browser.equalsIgnoreCase("Chrome")) {
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+				}else if(Browser.equalsIgnoreCase("Edge")) {
+					WebDriverManager.edgedriver().setup();
+					driver=new EdgeDriver();
+				}
+	        JS=(JavascriptExecutor)driver;
+			Ts=(TakesScreenshot) driver;
+			
+		    trip=new MakeMyTripPages(driver);
+			 newtour=new NewToursPages_001(driver);
+	        OrAmazon=new AmazonAssinPages(driver);
+			Google =new GooglePages_001(driver);
+			LinkedinOR=new LinkedinPages(driver);
+			DestinOR=new DestinationPages(driver);
+			 FooterlinkOR=new FooterlinksPages(driver);
+			driver.manage().window().maximize();
+			driver.get(Url);
+	    
+	    }
+	    
+	    @AfterClass
+	    public void teardown() {
+	        driver.close();
+	    }
+	    
+	}
+
+
+
+
+
+
+

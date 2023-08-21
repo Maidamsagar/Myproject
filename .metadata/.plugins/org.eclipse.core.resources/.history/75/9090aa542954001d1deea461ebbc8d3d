@@ -1,0 +1,11 @@
+package com.qa.testscripts;
+
+import org.testng.annotations.Test;
+
+public class TC_Goibibo_001 extends TestBase{
+	@Test
+	public void Flights() {
+		
+	}
+
+}

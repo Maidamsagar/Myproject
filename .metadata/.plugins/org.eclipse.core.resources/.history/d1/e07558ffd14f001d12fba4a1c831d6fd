@@ -1,0 +1,75 @@
+package com.qa.testscripts;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.qa.utility.ExcelUtility;
+
+
+public class TC_AmazonAssinment_001 extends TestBase{
+	@Test(dataProvider="getData")
+	public void AmazonAccCheck(String name,String email,String password) throws InterruptedException {
+		
+		
+		boolean contains=driver.getCurrentUrl().contains("https://www.amazon.in/");
+		if(contains) {
+			System.out.println("user is landed on the home page");
+		}else
+		{
+			System.out.println("user is not landedon home page");
+		}
+		Actions action = new Actions(driver);
+	    WebElement we = driver.findElement(By.id("nav-link-accountList"));
+	    action.moveToElement(we).build().perform();
+		OrAmazon.getSinIn().click();
+		
+		boolean contains1= driver.getTitle().contains("Amazon");
+		
+		if(contains1) {
+			System.out.println("the user is landed on the amazonRegistration page");
+		}else {
+			System.out.println("the user is not landed on the amazon");
+		}
+		OrAmazon.getUserField().clear();
+		OrAmazon.getUserEmail().clear();
+		OrAmazon.getUserPass().clear();;
+		
+		OrAmazon.getUserField().sendKeys(name);
+		OrAmazon.getUserEmail().sendKeys(email);
+		OrAmazon.getUserPass().sendKeys(password);
+		Thread.sleep(3000);
+		
+		
+	}
+       
+	
+	
+	
+	
+	@DataProvider
+	public String[][] getData() throws IOException{
+		String xFile="C:\\Users\\MAIDAMSAGAR\\eclipse-workspace\\AutomationTest.Selenium\\src\\test\\java\\com\\qa\\testdata\\TESTB.xlsx";
+		String xSheetName="Sheet1";
+		
+		int rowCount=ExcelUtility.getRowCount(xFile, xSheetName);
+		int cellCount=ExcelUtility.getCellCount(xFile, xSheetName, rowCount);
+		
+		String[][] data =new String[rowCount][cellCount];
+		for(int i=1;i<=rowCount;i++)
+		{
+			for(int j=0;j<cellCount;j++)
+			{
+				
+				data[i-1][j]=ExcelUtility.getCellData(xFile, xSheetName, i, j);
+			}
+		}
+		return data;
+		
+		
+	}
+}

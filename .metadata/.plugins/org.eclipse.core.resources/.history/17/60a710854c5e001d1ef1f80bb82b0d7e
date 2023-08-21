@@ -1,0 +1,18 @@
+package ProbSolving;
+
+import java.util.LinkedList;
+import java.util.List;
+
+
+public class Sample2 {
+
+	public static void main(String[] args) {
+		List<String> em=new LinkedList<String>();
+		em.add("s");
+		em.add("a");
+		
+		System.out.println(em);
+
+	}
+
+}

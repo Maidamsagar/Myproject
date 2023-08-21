@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Automation Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Amazon FunctionalTest(failed)">
+    <parameter name="Bowser" value="Edge"/>
+    <parameter name="Url" value="http://www.google.com"/>
+    <classes>
+      <class name="com.qa.testscripts.Tc_Google_003">
+        <methods>
+          <include name="teardown"/>
+          <include name="getSuggestions"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.qa.testscripts.Tc_Google_003 -->
+    </classes>
+  </test> <!-- Amazon FunctionalTest(failed) -->
+</suite> <!-- Failed suite [Automation Suite] -->

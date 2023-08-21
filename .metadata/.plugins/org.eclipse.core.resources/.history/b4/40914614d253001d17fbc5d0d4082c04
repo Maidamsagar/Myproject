@@ -1,0 +1,12 @@
+package com.qa.testscripts;
+
+import org.testng.annotations.Test;
+
+public class Amazon_001 extends TestBase{
+	@Test
+	public void SearchField() {
+		
+		
+	}
+
+}

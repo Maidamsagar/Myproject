@@ -1,0 +1,50 @@
+package com.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class DestinationPages {
+	WebDriver driver;
+	
+	
+	@FindBy(xpath="//input[@value='Wed']")
+	WebElement Radiocheck;
+	public WebElement getRadiocheck() {
+		return Radiocheck;
+	}
+	
+	@FindBy(xpath="//input[@value='Mon']")
+	WebElement RadioMonday;
+	public WebElement getRadioMonday() {
+		return RadioMonday;
+	}
+	
+	@FindBy(xpath="//input[@name='red']")
+	WebElement checkBoxRed;
+	public WebElement getcheckRedBox() {
+		return checkBoxRed;
+	}
+	
+	@FindBy(xpath="//input[@name='yellow']")
+	WebElement checkBoxYello;
+	public WebElement getcheckBoxYello() {
+		return checkBoxYello;
+	}
+	
+	@FindBy(xpath="//input[@name='orange']")
+	WebElement checkBoxOrange;
+	public WebElement getcheckBoxOrange() {
+		return checkBoxOrange;
+	}
+	
+	
+
+	public DestinationPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(driver,this);
+		
+	}
+
+}

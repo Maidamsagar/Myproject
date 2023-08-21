@@ -1,0 +1,13 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TC_WebDemo_001 {
+
+	public static void main(String[] args) {
+		// configure driver 
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\MAIDAMSAGAR\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        ChromeDriver driver=new ChromeDriver();
+	}
+
+}

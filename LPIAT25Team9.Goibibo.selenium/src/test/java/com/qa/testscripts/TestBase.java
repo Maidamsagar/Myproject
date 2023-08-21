@@ -1,0 +1,61 @@
+package com.qa.testscripts;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.qa.pages.GoibiboPages;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestBase {
+	GoibiboPages OrGoibibo;
+	TakesScreenshot Ts;
+	WebDriver driver;
+	
+	
+	@Parameters({"Browser","Url"})
+	@BeforeClass
+	public void setup(String Browser,String Url) {
+		if(Browser.equalsIgnoreCase("Chrome")) {
+			WebDriverManager.chromedriver().setup(); 
+			driver = new ChromeDriver();
+			}else if(Browser.equalsIgnoreCase("Edge")) { 
+				WebDriverManager.edgedriver().setup(); 
+				driver=new EdgeDriver();
+			}
+		//Ts=(TakesScreenshot) driver;
+		OrGoibibo=new GoibiboPages(driver);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get(Url);
+		
+	}
+//	@AfterClass
+//    public void teardown() {
+//        driver.close();
+//    }
+	public void captureScreenshot(WebDriver driver,String tName) throws IOException
+	  {
+	      TakesScreenshot Ts =(TakesScreenshot)driver;
+	        File src=Ts.getScreenshotAs(OutputType.FILE);
+	        File target = new File(System.getProperty("user.dir")+"/Screenshots/"+tName+".png");
+	        FileUtils.copyFile(src, target);
+	        
+
+
+
+	 }
+
+}

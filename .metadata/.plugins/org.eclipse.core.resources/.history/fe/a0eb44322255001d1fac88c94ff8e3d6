@@ -1,0 +1,86 @@
+package com.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class GoibiboPages {
+	WebDriver driver;
+	
+	@FindBy(xpath="//span[@class='header-sprite nav-icon-flights gr-append-right5']")
+	WebElement Flights;
+	public WebElement getFlights() {
+		return Flights;
+	}
+	@FindBy(xpath="//span[contains(text(),'One-way')]")
+	WebElement oneRadio;
+	public WebElement getoneRadio() {
+		return oneRadio;
+	}
+	
+	@FindBy(xpath="//span[text()='From']")
+	WebElement From;
+	public WebElement getFrom() {
+		return From;
+	}
+	
+	
+	@FindBy(xpath="//input")
+	WebElement FromField;
+	public WebElement getFromField() {
+		return FromField;
+	}
+	
+	@FindBy(xpath="//*[@id=\\\"root\\\"]/div[4]/div/div/div[1]/div[2]/div/div[2]/div/input")
+	WebElement To;
+	public WebElement getTo() {
+		return To;
+	}
+	
+	@FindBy(xpath="//span[contains(text(),'Round-trip')]")
+	WebElement roundradio;
+	public WebElement getroundradio() {
+		return roundradio;
+	}
+	//li[@class='sc-iAKWXU lesjfG']
+	//ul[@id='autoSuggest-list']
+//      /html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]
+	@FindBy(xpath="/html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]")
+	List<WebElement> AllSuggestions;
+	public List<WebElement>  getAllSuggestions() {
+		return AllSuggestions;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public GoibiboPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+		
+	}
+
+}
+//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="/html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]")
+//	WebElement From;
+//	public WebElement getFrom() {
+//		return From;
+//	}
+//*[@id=\"root\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="//*[@id=\\\"root\\\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input")
+//	WebElement FromField;
+//	public WebElement getFromField() {
+//		return FromField;
+//	}

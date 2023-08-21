@@ -1,0 +1,79 @@
+package com.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class NewToursPages_001 {
+	WebDriver driver;
+	
+	@FindBy(name="userName")
+	WebElement SearchUserName;
+	public WebElement getSearchUserName() {
+		return SearchUserName;
+		}
+	
+	@FindBy(name="password")
+	WebElement SearchPassward;
+	public WebElement getSearchPassward() {
+		return SearchPassward;
+	}
+	
+	@FindBy(name="submit")
+	WebElement Submit;
+	public WebElement getSubmit() {
+		return Submit;
+	}
+	@FindBy(linkText="Flights")
+	WebElement LinkFlight;
+	public WebElement getLinkFlight(){
+		return LinkFlight;
+	}
+	
+	@FindBy(xpath="//input[@value='roundtrip']")
+	WebElement RoundTrip;
+	public WebElement getRoundTrip(){
+		
+		return RoundTrip;
+	}
+	
+	@FindBy(name="passCount")
+	WebElement  PassCount;
+	public WebElement getPassCount(){
+		return PassCount;
+	}
+	
+	@FindBy(name="fromPort")
+	List<WebElement> FormPort;
+	public List<WebElement> getFormPort() {
+		return FormPort;
+	}
+	
+	@FindBy(name="fromPort")
+	WebElement PortFrom;
+	public WebElement getPortFrom() {
+		return PortFrom;
+	}
+	
+	@FindBy(name="toPort")
+	WebElement toPort;
+	public WebElement gettoPort(){
+		return toPort;
+	}
+	
+	//@FindBy()
+	
+	
+	public NewToursPages_001(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+	}
+
+
+
+	
+
+}

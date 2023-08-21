@@ -1,0 +1,9 @@
+package com.qa.pages;
+
+public class TC_JustdialPages {
+
+	public TC_JustdialPages() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

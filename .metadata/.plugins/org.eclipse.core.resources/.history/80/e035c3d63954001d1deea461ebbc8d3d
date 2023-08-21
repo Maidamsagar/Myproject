@@ -1,0 +1,35 @@
+package com.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class GoibiboPages {
+	WebDriver driver;
+	@FindBy(xpath="//span[contains(text(),'One-way')]")
+	WebElement Radio;
+	public WebElement getRadio() {
+		return Radio;
+	}
+	
+	@FindBy(xpath="//body/div[@id='root']/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+	WebElement From;
+	public WebElement getFrom() {
+		return From;
+	}
+	
+	//body/div[@id='root']/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1]
+	@FindBy(xpath="//body/div[@id='root']/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
+	WebElement FromField;
+	public WebElement getFromField() {
+		return FromField;
+	}
+
+	public GoibiboPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+		
+	}
+
+}

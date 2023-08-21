@@ -1,0 +1,9 @@
+package com.qa.pages;
+
+public class AmazonAssinPages {
+
+	public AmazonAssinPages() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

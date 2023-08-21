@@ -1,0 +1,69 @@
+package com.qa.testscripts;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.qa.utility.ExcelUtility;
+import com.qa.utility.ExcelUtilityAmzon;
+
+public class TC_AmazonAssinment_001 extends TestBaseGoogle{
+	@Test(priority=1, dataProvider="getData")
+	public void AmazonAccCheck(String name,String email,String password) throws InterruptedException {
+		
+		
+		boolean contains=driver.getCurrentUrl().contains("https://www.amazon.in/");
+		if(contains) {
+			System.out.println("user is landed on the home page");
+		}else
+		{
+			System.out.println("user is not landedon home page");
+		}
+		OrAmazon.getSinIn().click();
+		
+		boolean contains1= driver.getTitle().contains("Amazon");
+		
+		if(contains1) {
+			System.out.println("the user is landed on the amazonRegistration page");
+		}else {
+			System.out.println("the user is not landed on the amazon");
+		}
+		OrAmazon.getUserField().clear();
+		OrAmazon.getUserEmail().clear();
+		OrAmazon.getUserPass().clear();;
+		
+		OrAmazon.getUserField().sendKeys(name);
+		OrAmazon.getUserEmail().sendKeys(email);
+		OrAmazon.getUserPass().sendKeys(password);
+		Thread.sleep(3000);
+		
+		
+	}
+       
+	
+	
+	
+	
+	@DataProvider
+	public String[][] getData() throws IOException{
+		String xFile="C:\\Users\\MAIDAMSAGAR\\eclipse-workspace\\AutomationTest.Selenium\\src\\test\\java\\com\\qa\\testdata\\Book 6.xlsx";
+		String xSheetName="Sheet1";
+		
+		int rowCount=ExcelUtility.getRowCount(xFile, xSheetName);
+		int cellCount=ExcelUtility.getCellCount(xFile, xSheetName, rowCount);
+		
+		String[][] data =new String[rowCount][cellCount];
+		for(int i=1;i<=rowCount;i++)
+		{
+			for(int j=0;j<cellCount;j++)
+			{
+				//data[i-1][j]=ExcelUtility.getCellData(xFile, xSheetName, i, j);
+				data[i-1][j]=ExcelUtilityAmzon.getCellData(xFile, xSheetName, i, j);
+			}
+		}
+		return data;
+		
+		
+	}
+}

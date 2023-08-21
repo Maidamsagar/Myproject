@@ -1,0 +1,117 @@
+package com.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class GoibiboPages {
+	WebDriver driver;
+	
+
+	@FindBy(linkText="Flights")
+	WebElement Flights;
+	public WebElement getFlights() {
+		return Flights;
+	}
+	@FindBy(xpath="//span[contains(text(),'One-way')]")
+	WebElement oneRadio;
+	public WebElement getoneRadio() {
+		return oneRadio;
+	}
+	@FindBy(xpath="//span[contains(text(),'Round-trip')]")
+	//@FindBy(id="Round-trip")
+	WebElement roundradio;
+	public WebElement getroundradio() {
+		return roundradio;
+	}
+	
+	//@FindBy(xpath="//span[text()='From']")
+	@FindBy(name="sc-dJjYzT eyHaJv fswWidgetLabel")
+	WebElement From;
+	public WebElement getFrom() {
+		return From;
+	}
+	
+	
+	@FindBy(xpath="//input")
+	WebElement FromField;
+	public WebElement getFromField() {
+		return FromField;
+	}
+	//*[@id=\"root\"]/div[4]/div/div/div[1]/div[2]/div/div[2]/div/input
+	@FindBy(xpath="//input")
+	WebElement To;
+	public WebElement getTo() {
+		return To;
+	}
+	@FindBy(xpath="//span[text()='Done']")
+	WebElement doneDate;
+	public WebElement getdoneDate() {
+		return doneDate;
+	}
+	
+	@FindBy(xpath="//*[@id=\\\"root\\\"]/div[4]/div/div/div[1]/div[5]/div[2]/div[2]/div/div[1]/div[1]/div/span[3]")
+	WebElement increAdult;
+	public WebElement getincreAdult() {
+		return increAdult;
+	}
+	
+	@FindBy(className="sc-Galmp dZbQsT")
+	WebElement increChild;
+	public WebElement getincreChild() {
+		return increChild;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Done')]")
+	WebElement adultDone;
+	public WebElement getadultDone() {
+		return adultDone;
+	}
+	
+	
+	
+	//li[@class='sc-iAKWXU lesjfG']
+	//ul[@id='autoSuggest-list']
+//      /html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]
+	@FindAll(@FindBy(xpath="//*[@class='sc-efQSVx bUzoZw']"))
+	List<WebElement> AllSuggestions;
+	public List<WebElement>  getAllSuggestions() {
+		return AllSuggestions;
+	}
+	
+	
+	@FindAll(@FindBy(className="DayPicker-Month"))
+	List<WebElement> datePicker;
+	public List<WebElement>  getdatePicker() {
+		return datePicker;
+	}
+	
+	
+	
+	
+
+	public GoibiboPages(WebDriver rDriver) {
+		this.driver=rDriver;
+		PageFactory.initElements(rDriver,this);
+		
+	}
+
+}
+//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+	//*[@id="root"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="/html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]")
+//	WebElement From;
+//	public WebElement getFrom() {
+//		return From;
+//	}
+//*[@id=\"root\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input
+//	@FindBy(xpath="//*[@id=\\\"root\\\"]/div[4]/div/div/div[1]/div[1]/div/div[2]/div/input")
+//	WebElement FromField;
+//	public WebElement getFromField() {
+//		return FromField;
+//	}

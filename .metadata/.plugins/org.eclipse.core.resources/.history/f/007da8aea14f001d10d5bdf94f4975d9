@@ -1,0 +1,17 @@
+package com.qa.testscripts;
+
+public class TC_AmazonAssinment_001 extends TestBaseGoogle{
+	
+	public void AmazonAccCheck() {
+		boolean contains=driver.getCurrentUrl().contains("http://www.amazon.in/");
+		if(contains) {
+			System.out.println("user is lander on the home page");
+		}else
+		{
+			System.out.println("user is not landedon home page");
+		}
+		
+		OrAmazon.
+	}
+
+}

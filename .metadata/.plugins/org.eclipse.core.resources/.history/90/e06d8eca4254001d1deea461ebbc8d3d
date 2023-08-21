@@ -1,0 +1,28 @@
+package com.qa.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class TC_Goibibo_001 extends TestBase{
+	@Test
+	public void Flights() {
+		
+		boolean contains=driver.getTitle().contains("Goibibo");
+		if(contains) {
+			System.out.println("user is landed on the Goibibo page");
+		}else
+		{
+			System.out.println("user is not landedon Goibibo page");
+		}
+		
+		OrGoibibo.getRadio().click();
+		OrGoibibo.getFrom().sendKeys("Hyderabad");
+//		OrGoibibo.getFrom().clear();
+//		OrGoibibo.getFrom().sendKeys("Hyderabad");
+		
+		
+		
+	}
+
+}

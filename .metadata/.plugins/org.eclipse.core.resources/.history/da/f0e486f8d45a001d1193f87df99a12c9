@@ -1,0 +1,142 @@
+package com.qa.testscripts;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.qa.utility.ExcelUtility;
+
+public class TC_FlightBooking_006 extends TestBase{
+	@Test(priority=1,dataProvider="getData")
+	public void selectFairType(String FROM,String TO) throws InterruptedException, IOException {
+		SoftAssert sAssert=new SoftAssert();
+		//if(driver.findElement(By.xpath("//body/div[2]/div[1]")))
+		//driver.findElement(By.xpath("//body/div[2]/div[1]")).click();
+		
+		boolean contains=driver.getTitle().contentEquals("Goibibo");
+		if(contains) {
+			System.out.println("user is landed on the Goibibo page");
+			sAssert.assertTrue(contains);
+		}else
+		{
+			System.out.println("user is not landedon Goibibo page");
+			captureScreenshot(driver,"Goibibo");
+			sAssert.assertTrue(contains);
+		}
+		Thread.sleep(5000);
+		//OrGoibibo.getFlights().click();
+		boolean contains1=driver.getTitle().contains("Goibibo");
+		if(contains1) {
+			System.out.println("user is landed on the Goibibo Flights page");
+			sAssert.assertTrue(contains1);
+		}else
+		{
+			System.out.println("user is not landedon Goibibo Flights page");
+			captureScreenshot(driver,"Goibibof");
+			sAssert.assertTrue(contains1);
+		}
+		
+		WebElement ele1=OrGoibibo.getoneRadio();
+		boolean click=ele1.isSelected();
+		if(click == false) {
+			ele1.click();
+			System.out.println("one way clicked");
+		}else
+		{
+			System.out.println("one way clicked");
+		}
+		
+		OrGoibibo.getFrom().click();
+		Thread.sleep(5000);
+		OrGoibibo.getFromField().sendKeys(FROM);
+		Thread.sleep(5000);
+		
+		List<WebElement> allL=OrGoibibo.getAllSuggestions();
+        Thread.sleep(5000);
+        System.out.println("total "+allL.size());
+        for(WebElement item:allL) {
+			
+			System.out.println(item.getText());
+		}
+        
+        Thread.sleep(5000);
+		OrGoibibo.getFromField().sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		System.out.println("Selected from by name :");
+		OrGoibibo.getTo().sendKeys(TO);
+		Thread.sleep(5000);
+		
+		OrGoibibo.getTo().sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		System.out.println("Selected To by name :");
+		OrGoibibo.getdoneDate().click();
+		Thread.sleep(6000);
+		OrGoibibo.getincreAdult().click();
+		OrGoibibo.getincreChild().click();
+		Thread.sleep(2000);
+		OrGoibibo.getincreChild().click();
+		Thread.sleep(3000);
+		OrGoibibo.getadultDone().click();
+		Thread.sleep(2000);
+		OrGoibibo.getregular().click();
+		Thread.sleep(2000);
+		OrGoibibo.getarmed().click();
+		Thread.sleep(2000);
+		OrGoibibo.getserachFlight().click();
+		Thread.sleep(2000);
+		
+		OrGoibibo.getnonStop().click();
+		Thread.sleep(2000);
+		OrGoibibo.getmodifyFare().click();
+		Thread.sleep(2000);
+
+		
+		
+	}
+	@DataProvider
+	public String[][] getData() throws IOException{
+		String xFile="C:\\Users\\MAIDAMSAGAR\\eclipse-workspace\\LPIAT25Team9.Goibibo.selenium\\src\\test\\java\\com\\qa\\testdata\\DataGoibibo.xlsx";
+		String xSheetName="Sheet1";
+		
+		int rowCount=ExcelUtility.getRowCount(xFile, xSheetName);
+		int cellCount=ExcelUtility.getCellCount(xFile, xSheetName, rowCount);
+		
+		String[][] data =new String[rowCount][cellCount];
+		for(int i=1;i<=rowCount;i++)
+		{
+			for(int j=0;j<cellCount;j++)
+			{
+				
+				data[i-1][j]=ExcelUtility.getCellData(xFile, xSheetName, i, j);
+			}
+		}
+		return data;
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+//driver.findElement(By.xpath("//*[@id=\"root\"]/div[4]/div/div/div[1]/div[5]/div[2]/div[2]/div/div[1]/div[1]/div/span[3]")).click();
+		//Thread.sleep(3000);
+//		driver.findElement(By.xpath("//*[@id=\"root\"]/div[4]/div/div/div[1]/div[5]/div[2]/div[2]/div/div[1]/div[2]/div/span[3]")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//*[@id=\"root\"]/div[4]/div/div/div[1]/div[5]/div[2]/div[2]/div/div[1]/div[2]/div/span[3]")).click();
+//driver.findElement(By.xpath("//span[contains(text(),'regular')]")).click();
+//Thread.sleep(2000);
+//driver.findElement(By.xpath("//span[contains(text(),'armed forces')]")).click();
+//Thread.sleep(2000);
+//driver.findElement(By.xpath("//span[@class='sc-dtDOqo iuIbnZ']")).click();
+//Thread.sleep(8000);

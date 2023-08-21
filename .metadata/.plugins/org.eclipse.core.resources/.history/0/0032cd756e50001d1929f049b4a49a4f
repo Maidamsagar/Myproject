@@ -1,0 +1,42 @@
+package com.qa.testscripts;
+
+public class TC_NewToursAss_002 extends TestBase{
+	public void GuruValidation() throws InterruptedException {
+		boolean contains=driver.getTitle().contains("GURU");
+		if(contains) {
+			System.out.println("user is landed on the newtours home page");
+		}else
+		{
+			System.out.println("user is not landedon newtours home page");
+		}
+		newtour.getSearchUserName().sendKeys("mercury");
+		newtour.getSearchPassward().sendKeys("mercury");
+		newtour.getSubmit().click();
+		Thread.sleep(3000);
+		
+		String url="https://demo.guru99.com/test/newtours/login_sucess.php";
+		String expectedurl= driver.getCurrentUrl();
+		
+		if(url.equalsIgnoreCase(expectedurl))
+		{
+			System.out.println("login successful");
+		}else
+		{
+			System.out.println("login fail");
+		}
+		
+		newtour.getLinkFlight().click();
+		
+		String url1="https://demo.guru99.com/test/newtours/login_sucess.php";
+		String expectedurl1= driver.getCurrentUrl();
+		
+		if(url1.equalsIgnoreCase(expectedurl1))
+		{
+			System.out.println("login successful user is landedon flights page");
+		}else
+		{
+			System.out.println("login fail");
+		}
+		
+
+}

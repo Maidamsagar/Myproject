@@ -1,0 +1,14 @@
+
+public class Sample4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String sc=new String();
+		sc="dhgdhy";
+		System.out.println(sc);
+		int b=Integer.parseInt(sc);
+		System.out.println(b);
+
+	}
+
+}
